@@ -37,6 +37,4 @@ for (let i = 1; i <= 100; i++) {
     }
 }
 
-// console.log(fizzBuzzResult.slice(0, -1));
-
 export { fizzBuzzResult };

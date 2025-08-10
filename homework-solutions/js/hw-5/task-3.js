@@ -10,10 +10,14 @@ let consonants = 0;
 let vowelsAndConsonantsResult = '';
 
 for (let i = 0; i < word.length; i++) {
-    if (word[i].match(/[aeiou]/gi)) {
-        vowels += 1;
-    } else {
-        consonants += 1;
+    const char = word[i].toLowerCase();
+    
+    if (/[a-z]/.test(char)) {
+        if (/[aeiou]/.test(char)) {
+            vowels++;
+        } else {
+            consonants++;
+        }
     }
 }
 
