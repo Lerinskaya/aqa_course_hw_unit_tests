@@ -15,11 +15,7 @@ for (let i = 1; i <= 10; i++) {
 }
 
 for (const item of arr) {
-  if (item % 2 === 0) {
-    forOf.push(item**2)
-  } else {
-    forOf.push(item**3)
-  }
+forOf.push(item % 2 === 0 ? item ** 2 : item ** 3);
 }
 
 /*
