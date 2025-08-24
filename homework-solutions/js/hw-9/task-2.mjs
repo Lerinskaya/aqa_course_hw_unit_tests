@@ -14,23 +14,61 @@ const characters = [
 ];
 
 function addCharacter(character) {
-  // Ваш код
+  if (!character || typeof character.name !== 'string' || typeof character.age !== 'number') {
+    throw new TypeError('Invalid input: expected { name: string, age: number }');
+  } 
+
+  return characters.push(character);
 }
 
 function getCharacter(name) {
-  // Ваш код
+  if (typeof name !== 'string') {
+    throw new TypeError('Invalid input: expected name: string');
+  }
+
+  return characters.find(character => character.name === name);
 }
 
 function getCharactersByAge(minAge) {
-  // Ваш код
+  if (typeof minAge !== 'number' || minAge < 0) {
+     throw new TypeError('Invalid input: expected minAge: number');
+  }
+
+  return characters.filter(character => character.age >= minAge);
 }
 
 function updateCharacter(name, newCharacter) {
-  // Ваш код
+  const character = getCharacter(name);
+
+  if (!character) {
+    throw new Error(`Character "${name}" not found`);
+  }
+
+  if (
+    !newCharacter ||
+    typeof newCharacter.name !== 'string' ||
+    typeof newCharacter.age !== 'number'
+  ) {
+    throw new TypeError('Invalid newCharacter: expected { name: string, age: number }');
+  }
+
+  character.name = newCharacter.name;
+  character.age = newCharacter.age;
+  return character;
 }
 
 function removeCharacter(name) {
-  // Ваш код
+  if (typeof name !== 'string') {
+    throw new TypeError('Invalid input: expected name: string');
+  }
+
+  const index = characters.findIndex(character => character.name === name);
+
+  if (index === -1) {
+    throw new Error(`Character "${name}" not found`);
+  }
+
+  return characters.splice(index, 1);
 }
 
 export { characters, addCharacter, updateCharacter, getCharacter, getCharactersByAge, removeCharacter };
