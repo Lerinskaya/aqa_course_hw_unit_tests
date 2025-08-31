@@ -7,6 +7,15 @@
 
 let qa;
 
+qa = {
+  name:'Elf',
+  age: 37,
+  salary: 50000,
+  getInfo(greetingsWord) {
+    return `${greetingsWord}, my name is ${this.name}, I'm ${this.age} and my salary is ${this.salary}`;
+  }
+};
+
 /*
  2. Changing the context
   - Создайте объект anotherQa с полями name, age, salary, значения в которых будут отличны от объекта qa
@@ -17,14 +26,21 @@ let qa;
 
 let anotherQa;
 
+anotherQa = {
+  name:'Troll',
+  age: 21,
+  salary: 4444,
+};
+
 // Используйте bind с greetingWord "Hello"
-let bindResult;
+let bindResult = qa.getInfo.bind(anotherQa)('Hello');
+
 
 // Используйте call с greetingWord "Hi"
-let callResult;
+let callResult = qa.getInfo.call(anotherQa,'Hi');
 
 // Используйте apply с greetingWord "Hey"
-let applyResult;
+let applyResult = qa.getInfo.apply(anotherQa,['Hey']);
 
 /*
  3. Closures
@@ -38,7 +54,12 @@ let applyResult;
 */
 
 function createCounter() {
-  // Ваш код
+  let count = 0;
+  return () => {
+    count++;
+    console.log('Function was called ${count} times');
+    return count;
+  }
 }
 
 const functionCallCounter = createCounter();
