@@ -8,7 +8,17 @@
 */
 
 function countOccurrences(arr) {
-  // ваш код
+  let obj = {};
+
+  for (let item of arr) {
+    if(obj[item]) {
+      obj[item] += 1; 
+    } else {
+      obj[item] = 1;
+    }
+  }
+
+  return obj;
 }
 
 export { countOccurrences };
