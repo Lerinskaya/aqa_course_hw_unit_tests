@@ -40,9 +40,7 @@ for (const [key, value] of keyValuePairs) {
 let hasSalaryKey1stOption;
 let hasSalaryKey2ndOption;
 
-for (const key in character) {
-  hasSalaryKey1stOption = key === 'salary';
-}
+hasSalaryKey1stOption = "salary" in character; 
 
 hasSalaryKey2ndOption = Object.hasOwn(character, 'salary');
 
