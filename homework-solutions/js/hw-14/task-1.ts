@@ -1,7 +1,7 @@
 
 // 1. Создайте дженерик функцию wrapInArray, которая принимает значение любого типа и возвращает его в виде массива этого типа.
-    function wrapInArray<T>(arg: T): T {
-        return arg;
+    function wrapInArray<T>(arg: T): T[] {
+        return [arg];
     }
 
     const numberArray = wrapInArray(5); // [5]
