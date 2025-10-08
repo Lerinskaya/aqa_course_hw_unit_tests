@@ -18,14 +18,11 @@ interface IVehicle {
 //     - Абстрактный метод getDetails, который нужно реализовать в классах-наследниках.
 
 abstract class Vehicle implements IVehicle{
-    protected make: string;
-    protected model: string;
-
-    constructor(make: string, model:string) {
-        this.make = make;
-        this.model = model
-    }
-
+    constructor(
+        protected make: string,
+        protected model: string
+    ) {}
+    
     abstract getDetails(): string;
 
     start(): string {

@@ -6,13 +6,15 @@ interface IEmployee {
     isManager: boolean;
 }
 
-// 2. Создайте тип EmployeeKeys, который будет юнионом названий ключей IEmployee (использовать keyof)
-
 const QA: IEmployee = {
     name: "Tom",
     salary: 1000,
     isManager: false
 }
+
+// 2. Создайте тип EmployeeKeys, который будет юнионом названий ключей IEmployee (использовать keyof)
+
+type EmployeeKeys = keyof IEmployee;
 
 // 3. Создайте тип QaKeys, который будет содержать лишь ключи объекта QA(использовать keyof и typeof)
 
