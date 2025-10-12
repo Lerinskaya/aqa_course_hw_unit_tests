@@ -8,7 +8,7 @@ Task 2.
 .txt
 
   Xpath: первый элемент с классом ‘txt’
-//*[@class='txt'][1]
+//*[contains(@class,'one')][1]
 
   Xpath: кнопку которая содержит текст: ‘Remove comment’
 //button[contains(text(), 'Remove comment')]
@@ -21,8 +21,8 @@ Task 2.
 [multitag2='on']
 
   Xpath/CSS: всех детей элемента ‘div’ с классом ‘content’ 
-//div[@class='content']/*
-div.content > *
+//div//*[@class='content']
+div > .content
 
   CSS: все элементы ‘span’ и  ‘button’ с классом ‘content’ 
 span.content, button.content
